@@ -1,21 +1,24 @@
+import { Link } from 'react-router-dom';
+
 export default function ProductItem({
   productId,
   productName,
   productPrice,
   productImage,
 }) {
+  const url = `/Product/${productId}`;
   return (
     <>
       <div className="column is-one-quarter-desktop is-one-third-tablet">
-        <a
-          href="detail.html"
+        <Link
           className="card"
+          to={url}
         >
           <div className="card-image">
             <figure className="image is-4by3">
               <img
                 src={productImage}
-                alt="Placeholder image"
+                alt={productName}
               />
             </figure>
           </div>
@@ -25,7 +28,7 @@ export default function ProductItem({
               Giá: <span className="has-text-primary">{productPrice}</span>
             </p>
           </div>
-        </a>
+        </Link>
       </div>
     </>
   );

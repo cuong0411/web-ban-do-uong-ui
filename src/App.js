@@ -7,6 +7,7 @@ import './App.css';
 import CategoryList from './Component/CategoryList';
 import Map from './Component/Map';
 import { Routes, Route } from 'react-router-dom';
+import ProductItemDetail from './Component/ProductItemDetail';
 function App() {
   return (
     <div className="container">
@@ -28,6 +29,10 @@ function App() {
         <Route
           path="category/:id"
           element={<ProductList />}
+        />
+        <Route
+          path="product/:id"
+          element={<ProductItemDetail />}
         />
         <Route
           path="services"

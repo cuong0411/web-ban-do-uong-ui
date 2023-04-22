@@ -1,22 +1,3 @@
-// import React, { useEffect, useState } from 'react';
-// import { json, useParams } from 'react-router-dom';
-
-// export default function ProductList() {
-//   const { id } = useParams();
-
-//   useEffect(() => {
-//     fetch(`https://localhost:7046/api/Categories/Products/${id}`)
-//       .then((response) => response.json())
-//       .then((json) => console.log(json));
-//   });
-
-//   return (
-//     <>
-//       <div></div>
-//     </>
-//   );
-// }
-
 import axios from 'axios';
 import React from 'react';
 import { useParams } from 'react-router-dom';
@@ -38,8 +19,8 @@ export default function ProductList() {
 
   return (
     <div className="section">
-      <div class="container">
-        <div class="columns is-multiline is-6">
+      <div className="container">
+        <div className="columns is-multiline is-6">
           {post.map((item) => (
             <ProductItem
               productId={item.id}
