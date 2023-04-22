@@ -1,6 +1,6 @@
 export default function Map() {
   return (
-    <section className="map-section">
+    <section className="map-section my-6">
       <iframe
         title="map"
         id="map"

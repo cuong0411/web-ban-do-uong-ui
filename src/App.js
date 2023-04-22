@@ -1,8 +1,12 @@
 import Header from './Layout/Header';
 import Footer from './Layout/Footer';
+import Services from './Component/Services';
+import Contact from './Component/Contact';
+import ProductList from './Component/ProductList';
 import './App.css';
 import CategoryList from './Component/CategoryList';
 import Map from './Component/Map';
+import { Routes, Route } from 'react-router-dom';
 function App() {
   return (
     <div className="container">
@@ -16,7 +20,25 @@ function App() {
           </h3>
         </div>
       </div>
-      <CategoryList />
+      <Routes>
+        <Route
+          path="/"
+          element={<CategoryList />}
+        />
+        <Route
+          path="category/:id"
+          element={<ProductList />}
+        />
+        <Route
+          path="services"
+          element={<Services />}
+        />
+        <Route
+          path="contact"
+          element={<Contact />}
+        />
+      </Routes>
+      {/* <ProductList /> */}
       <Map />
       <Footer />
     </div>

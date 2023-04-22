@@ -1,12 +1,11 @@
+import { Link } from 'react-router-dom';
+
 export default function Header() {
   return (
     <>
-      <div
-        className="container"
-        id="navbar-container"
-      >
+      <div id="navbar-container">
         <nav
-          className="navbar is-fixed-top has-background-light"
+          className="navbar is-fixed-top has-background-info"
           role="navigation"
           aria-label="main navigation"
         >
@@ -38,35 +37,33 @@ export default function Header() {
             id="navbarBasicExample"
             className="navbar-menu"
           >
-            <div className="navbar-start" />
-            <div className="navbar-end">
-              <div className="navbar-item">
-                <a
-                  className="navbar-item"
-                  href="index.html"
-                >
-                  Home
+            <div className="navbar-start">
+              <Link
+                className="navbar-item"
+                to="/"
+              >
+                Home
+              </Link>
+              <Link
+                className="navbar-item"
+                to="/services"
+              >
+                Services
+              </Link>
+              <Link
+                className="navbar-item"
+                to="/contact"
+              >
+                Contact
+              </Link>
+            </div>
+
+            <div className="navbar-end mr-3">
+              <div className="buttons">
+                <a className="button is-primary">
+                  <strong>Sign up</strong>
                 </a>
-                <a
-                  className="navbar-item"
-                  href="services.html"
-                >
-                  Services
-                </a>
-                <a
-                  className="navbar-item"
-                  href="contact.html"
-                >
-                  Contact us
-                </a>
-                <div className="buttons">
-                  <a className="button is-primary is-orange">
-                    <strong>Sign Up</strong>
-                  </a>
-                  <a className="button is-primary is-orange">
-                    <strong>Login In</strong>
-                  </a>
-                </div>
+                <a className="button is-light">Log in</a>
               </div>
             </div>
           </div>
