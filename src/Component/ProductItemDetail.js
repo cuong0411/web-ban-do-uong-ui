@@ -34,7 +34,7 @@ export default function ProductItemDetail() {
           <br />
           <div className="buttons is-left mt-3">
             <a
-              href="./ca-phe.html"
+              href="/"
               className="button is-medium is-black is-light is-link"
             >
               Đặt Mua

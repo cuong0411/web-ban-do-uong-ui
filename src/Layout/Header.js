@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import './Header.css';
 
 export default function Header() {
   return (
@@ -63,7 +64,12 @@ export default function Header() {
                 <a className="button is-primary">
                   <strong>Sign up</strong>
                 </a>
-                <a className="button is-light">Log in</a>
+                <Link
+                  className="button is-light"
+                  to="/login"
+                >
+                  Login
+                </Link>
               </div>
             </div>
           </div>

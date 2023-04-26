@@ -8,6 +8,7 @@ import CategoryList from './Component/CategoryList';
 import Map from './Component/Map';
 import { Routes, Route } from 'react-router-dom';
 import ProductItemDetail from './Component/ProductItemDetail';
+import Login from './Component/Login';
 function App() {
   return (
     <div className="container">
@@ -42,8 +43,11 @@ function App() {
           path="contact"
           element={<Contact />}
         />
+        <Route
+          path="login"
+          element={<Login />}
+        />
       </Routes>
-      {/* <ProductList /> */}
       <Map />
       <Footer />
     </div>
