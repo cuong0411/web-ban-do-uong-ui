@@ -57,12 +57,18 @@ export default function Header() {
               >
                 Contact
               </Link>
+              <Link
+                className="navbar-item"
+                to="/fakeproduct"
+              >
+                FakeProduct
+              </Link>
             </div>
 
             <div className="navbar-end mr-3">
               <div className="buttons">
                 <a className="button is-primary">
-                  <strong>Sign up</strong>
+                  <strong>Cart</strong>
                 </a>
                 <Link
                   className="button is-light"

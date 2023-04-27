@@ -55,7 +55,6 @@ export default function Login() {
               <i className="fas fa-check" />
             </span>
           </div>
-          <p className="help is-success">This username is available</p>
         </div>
         <div className="field">
           <label className="label">Password</label>

@@ -9,6 +9,7 @@ import Map from './Component/Map';
 import { Routes, Route } from 'react-router-dom';
 import ProductItemDetail from './Component/ProductItemDetail';
 import Login from './Component/Login';
+import FakeProduct from './FakeProduct/FakeProduct';
 function App() {
   return (
     <div className="container">
@@ -47,7 +48,12 @@ function App() {
           path="login"
           element={<Login />}
         />
+        <Route
+          path="fakeproduct"
+          element={<FakeProduct />}
+        />
       </Routes>
+
       <Map />
       <Footer />
     </div>
