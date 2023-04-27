@@ -16,16 +16,21 @@ import GetItem from './GetItem';
 import { useState } from 'react';
 
 function App() {
+  // hiển thị số lượng món hàng trên header
+  const [qty, setQty] = useState(0);
+
   const [items, setItems] = useState([]);
-  const onClick = (id, title, price, qty) => {
-    const result = GetItem(id, title, price, qty);
-    console.log(items);
-    console.log(result);
+  const onClick = (id, img, title, price, qty) => {
+    // lấy thuộc tính của chi tiết sản phẩm
+    const result = GetItem(id, img, title, price, qty);
     setItems([...items, result]);
+
+    const totalQty = items.reduce((acc, cur) => acc + cur.qty, 0);
+    setQty(totalQty);
   };
   return (
     <div className="container">
-      <Header />
+      <Header qty={qty} />
       <div className="container my-6">
         <div className="has-text-centered pb-6 my-5">
           <h1 className="title is-1">Fresh Fruits</h1>

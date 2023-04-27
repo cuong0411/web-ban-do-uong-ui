@@ -13,7 +13,7 @@ export default function FakeProductItem({ onClick }) {
   // const [item, setItem] = useState(null);
   const handleClick = (e) => {
     e.preventDefault();
-    return onClick(id, product.title, product.price, qty);
+    return onClick(id, product.image, product.title, product.price, qty);
   };
 
   const [qty, setQty] = useState(0);

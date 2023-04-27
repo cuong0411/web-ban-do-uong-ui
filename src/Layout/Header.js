@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import './Header.css';
 
-export default function Header() {
+export default function Header({ qty }) {
   return (
     <>
       <div id="navbar-container">
@@ -71,7 +71,7 @@ export default function Header() {
                   className="button is-primary"
                   to={'/cart'}
                 >
-                  <strong>Cart</strong>
+                  <strong>Cart {qty}</strong>
                 </Link>
                 <Link
                   className="button is-light"
