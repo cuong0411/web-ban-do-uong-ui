@@ -1,3 +1,3 @@
-export default function GetItem(id, qty) {
-  return { id, qty };
+export default function GetItem(id, title, price, qty) {
+  return { id, title, price, qty };
 }

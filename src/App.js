@@ -17,8 +17,8 @@ import { useState } from 'react';
 
 function App() {
   const [items, setItems] = useState([]);
-  const onClick = (id, qty) => {
-    const result = GetItem(id, qty);
+  const onClick = (id, title, price, qty) => {
+    const result = GetItem(id, title, price, qty);
     console.log(items);
     console.log(result);
     setItems([...items, result]);

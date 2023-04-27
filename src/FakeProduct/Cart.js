@@ -1,13 +1,14 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Cart({ items }) {
-  // const [qty, setQty] = useState(0);
   return (
     <div>
       <table className="table">
         <thead>
           <tr>
             <th>Id</th>
+            <th>Title</th>
+            <th>Price</th>
             <th>Qty</th>
           </tr>
         </thead>
@@ -15,6 +16,8 @@ export default function Cart({ items }) {
           {items.map((item) => (
             <tr>
               <td>{item.id}</td>
+              <td>{item.title}</td>
+              <td>{item.price}</td>
               <td>{item.qty}</td>
             </tr>
           ))}
