@@ -14,12 +14,15 @@ import FakeProductItem from './FakeProduct/FakeProductItem';
 import Cart from './FakeProduct/Cart';
 import GetItem from './GetItem';
 import { useState } from 'react';
+import Hero from './Layout/Hero';
 
 function App() {
   // hiển thị số lượng món hàng trên header
   const [qty, setQty] = useState(0);
 
   const [items, setItems] = useState([]);
+
+  // hàm sẽ truyền xuống FakeProductItem component
   const onClick = (id, img, title, price, qty) => {
     // lấy thuộc tính của chi tiết sản phẩm
     const result = GetItem(id, img, title, price, qty);
@@ -31,15 +34,7 @@ function App() {
   return (
     <div className="container">
       <Header qty={qty} />
-      <div className="container my-6">
-        <div className="has-text-centered pb-6 my-5">
-          <h1 className="title is-1">Fresh Fruits</h1>
-          <h3 className="subtitle">
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have
-          </h3>
-        </div>
-      </div>
+      <Hero />
       <Routes>
         <Route
           path="/"
