@@ -1,4 +1,5 @@
 export default function Cart({ items }) {
+  const total = items.reduce((acc, cur) => acc + cur.qty * cur.price, 0);
   return (
     <div>
       <table className="table">
@@ -28,8 +29,19 @@ export default function Cart({ items }) {
               <td>{item.qty * item.price}</td>
             </tr>
           ))}
+          <tr>
+            <td>Total</td>
+            <td colSpan={4}></td>
+            <td>{total}</td>
+          </tr>
         </tbody>
       </table>
+      <button
+        className="button"
+        onClick={console.log('thank you')}
+      >
+        Checkout
+      </button>
     </div>
   );
 }
