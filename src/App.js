@@ -10,6 +10,8 @@ import { Routes, Route } from 'react-router-dom';
 import ProductItemDetail from './Component/ProductItemDetail';
 import Login from './Component/Login';
 import FakeProduct from './FakeProduct/FakeProduct';
+import FakeProductItem from './FakeProduct/FakeProductItem';
+
 function App() {
   return (
     <div className="container">
@@ -51,6 +53,10 @@ function App() {
         <Route
           path="fakeproduct"
           element={<FakeProduct />}
+        />
+        <Route
+          path="fakeproduct/:id"
+          element={<FakeProductItem />}
         />
       </Routes>
 

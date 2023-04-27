@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './FakeProduct.css';
+import { Link } from 'react-router-dom';
 
 export default function FakeProduct() {
   const [products, setProducts] = useState([]);
@@ -13,7 +14,10 @@ export default function FakeProduct() {
       <div className="columns is-multiline is-6">
         {products.map((product) => (
           <div className="column is-one-quarter-desktop is-one-third-tablet">
-            <div className="card">
+            <Link
+              className="card"
+              to={'/fakeproduct/' + product.id}
+            >
               <div className="card-image">
                 <figure className="image is-4by3">
                   <img
@@ -31,7 +35,7 @@ export default function FakeProduct() {
                   <span className="has-text-primary">{product.price}$</span>
                 </p>
               </div>
-            </div>
+            </Link>
           </div>
         ))}
       </div>
