@@ -26,7 +26,10 @@ function App() {
   const onClick = (id, img, title, price, qty) => {
     // lấy thuộc tính của chi tiết sản phẩm
     const result = GetItem(id, img, title, price, qty);
+    console.log(result);
+
     setItems([...items, result]);
+    console.log(items);
 
     const totalQty = items.reduce((acc, cur) => acc + cur.qty, 0);
     setQty(totalQty);

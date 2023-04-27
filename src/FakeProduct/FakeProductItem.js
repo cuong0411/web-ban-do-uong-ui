@@ -19,14 +19,12 @@ export default function FakeProductItem({ onClick }) {
   const [qty, setQty] = useState(0);
   const addOne = () => {
     setQty(qty + 1);
-    console.log(qty);
   };
   const removeOne = () => {
     if (qty <= 0) {
       setQty(0);
     } else {
       setQty(qty - 1);
-      console.log(qty);
     }
   };
   const handleChange = (e) => {
