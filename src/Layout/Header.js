@@ -67,9 +67,12 @@ export default function Header() {
 
             <div className="navbar-end mr-3">
               <div className="buttons">
-                <a className="button is-primary">
+                <Link
+                  className="button is-primary"
+                  to={'/cart'}
+                >
                   <strong>Cart</strong>
-                </a>
+                </Link>
                 <Link
                   className="button is-light"
                   to="/login"

@@ -11,8 +11,18 @@ import ProductItemDetail from './Component/ProductItemDetail';
 import Login from './Component/Login';
 import FakeProduct from './FakeProduct/FakeProduct';
 import FakeProductItem from './FakeProduct/FakeProductItem';
+import Cart from './FakeProduct/Cart';
+import GetItem from './GetItem';
+import { useState } from 'react';
 
 function App() {
+  const [items, setItems] = useState([]);
+  const onClick = (id, qty) => {
+    const result = GetItem(id, qty);
+    console.log(items);
+    console.log(result);
+    setItems([...items, result]);
+  };
   return (
     <div className="container">
       <Header />
@@ -56,7 +66,11 @@ function App() {
         />
         <Route
           path="fakeproduct/:id"
-          element={<FakeProductItem />}
+          element={<FakeProductItem onClick={onClick} />}
+        />
+        <Route
+          path="Cart"
+          element={<Cart items={items} />}
         />
       </Routes>
 
