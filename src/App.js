@@ -1,6 +1,6 @@
 import Header from './Layout/Header';
 import Footer from './Layout/Footer';
-import Services from './Component/Services';
+import About from './Component/About';
 import Contact from './Component/Contact';
 import ProductList from './Component/ProductList';
 import './App.css';
@@ -41,6 +41,11 @@ function App() {
     const totalQty = items.reduce((acc, cur) => acc + cur.qty, 0);
     setQty(totalQty);
   };
+
+  // reset cart
+  const onCheckout = (total) => {
+    setQty(total);
+  };
   return (
     <div className="container">
       <Header qty={qty} />
@@ -59,8 +64,8 @@ function App() {
           element={<ProductItemDetail />}
         />
         <Route
-          path="services"
-          element={<Services />}
+          path="about"
+          element={<About />}
         />
         <Route
           path="contact"
@@ -80,7 +85,12 @@ function App() {
         />
         <Route
           path="Cart"
-          element={<Cart items={items} />}
+          element={
+            <Cart
+              items={items}
+              onCheckout={onCheckout}
+            />
+          }
         />
       </Routes>
 

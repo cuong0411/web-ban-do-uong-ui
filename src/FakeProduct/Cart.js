@@ -1,5 +1,16 @@
-export default function Cart({ items }) {
-  const total = items.reduce((acc, cur) => acc + cur.qty * cur.price, 0);
+import { useState } from 'react';
+
+export default function Cart({ items, onCheckout }) {
+  const [listCart, setListCart] = useState(items);
+  const [total, setTotal] = useState(
+    items.reduce((acc, cur) => acc + cur.qty * cur.price, 0)
+  );
+  const handleOnClick = () => {
+    alert('Thanh toan thanh cong');
+    setListCart([]);
+    setTotal(0);
+    onCheckout(listCart.length);
+  };
   return (
     <div>
       <table className="table">
@@ -14,7 +25,7 @@ export default function Cart({ items }) {
           </tr>
         </thead>
         <tbody>
-          {items.map((item) => (
+          {listCart.map((item) => (
             <tr>
               <td>{item.id}</td>
               <td style={{ width: '100px' }}>
@@ -24,21 +35,21 @@ export default function Cart({ items }) {
                 />
               </td>
               <td>{item.title}</td>
-              <td>{item.price}</td>
+              <td>{item.price} $</td>
               <td>{item.qty}</td>
-              <td>{item.qty * item.price}</td>
+              <td>{item.qty * item.price} $</td>
             </tr>
           ))}
           <tr>
             <td>Total</td>
             <td colSpan={4}></td>
-            <td>{total}</td>
+            <td>{total} $</td>
           </tr>
         </tbody>
       </table>
       <button
         className="button"
-        onClick={console.log('thank you')}
+        onClick={handleOnClick}
       >
         Checkout
       </button>

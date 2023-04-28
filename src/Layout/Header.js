@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowDown, faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import './Header.css';
 
 export default function Header({ qty }) {
@@ -11,9 +13,9 @@ export default function Header({ qty }) {
           aria-label="main navigation"
         >
           <div className="navbar-brand">
-            <a
+            <Link
               className="navbar-item"
-              href="https://bulma.io"
+              to="/"
             >
               <img
                 src="https://bulma.io/images/bulma-logo.png"
@@ -21,7 +23,7 @@ export default function Header({ qty }) {
                 height={28}
                 alt=""
               />
-            </a>
+            </Link>
             <a
               role="button"
               className="navbar-burger"
@@ -47,9 +49,9 @@ export default function Header({ qty }) {
               </Link>
               <Link
                 className="navbar-item"
-                to="/services"
+                to="/about"
               >
-                Services
+                About Us
               </Link>
               <Link
                 className="navbar-item"
@@ -71,7 +73,7 @@ export default function Header({ qty }) {
                   className="button is-primary"
                   to={'/cart'}
                 >
-                  <strong>Cart {qty}</strong>
+                  <strong>Giỏ hàng {qty}</strong>
                 </Link>
                 <Link
                   className="button is-light"

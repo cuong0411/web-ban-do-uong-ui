@@ -1,5 +1,12 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faArrowDown,
+  faArrowUp,
+  faArrowLeft,
+} from '@fortawesome/free-solid-svg-icons';
+import './FakeProductItem.css';
 
 export default function FakeProductItem({ onClick }) {
   const { id } = useParams();
@@ -33,6 +40,13 @@ export default function FakeProductItem({ onClick }) {
   };
   return (
     <div class="container">
+      <Link
+        className="button"
+        to="/fakeproduct"
+      >
+        <FontAwesomeIcon icon={faArrowLeft} />
+        Back
+      </Link>
       <div className="columns">
         <div className="column is-one-third">
           <figure className="image">
@@ -45,17 +59,32 @@ export default function FakeProductItem({ onClick }) {
         <div className="column is-one-third is-flex is-justify-content-center is-flex-direction-column">
           <h3 className="title is-3">{product.title}</h3>
           <p className="has-text-justified">{product.description}</p>
-          <p className="is-size-5 has-text-info">{product.price} $</p>
+          <p className="is-size-4 ">
+            <span className="has-text-success-dark">{product.price} $</span>
+          </p>
           <br />
           <div className="buttons is-left mt-3">
-            <button onClick={removeOne}>-</button>
-            <input
-              type="number"
-              min={0}
-              value={qty}
-              onChange={handleChange}
-            />
-            <button onClick={addOne}>+</button>
+            <div className="box is-flex">
+              <button
+                onClick={removeOne}
+                className="button"
+              >
+                <FontAwesomeIcon icon={faArrowDown} />
+              </button>
+              <input
+                className="input"
+                type="number"
+                min={0}
+                value={qty}
+                onChange={handleChange}
+              />
+              <button
+                onClick={addOne}
+                className="button"
+              >
+                <FontAwesomeIcon icon={faArrowUp} />
+              </button>
+            </div>
             <a
               href="/"
               className="button is-medium is-black is-light is-link"
