@@ -28,8 +28,15 @@ function App() {
     const result = GetItem(id, img, title, price, qty);
     console.log(result);
 
-    setItems([...items, result]);
-    console.log(items);
+    if (items.findIndex((ele) => ele['id'] === result['id']) === -1) {
+      // không tồn tại
+      setItems([...items, result]);
+      console.log(items);
+    } else {
+      // đã tồn tại id trong giỏ hàng
+      const index = items.findIndex((ele) => ele['id'] === result['id']);
+      items[index]['qty'] += result['qty'];
+    }
 
     const totalQty = items.reduce((acc, cur) => acc + cur.qty, 0);
     setQty(totalQty);
