@@ -20,6 +20,7 @@ export default function FakeProductItem({ onClick }) {
   // const [item, setItem] = useState(null);
   const handleClick = (e) => {
     e.preventDefault();
+    alert('Thêm vào giỏ hàng thành công');
     return onClick(id, product.image, product.title, product.price, qty);
   };
 

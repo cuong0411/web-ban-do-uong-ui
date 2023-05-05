@@ -71,7 +71,9 @@ export default function Header({ qty }) {
                   className="button is-primary"
                   to={'/cart'}
                 >
-                  <strong>Giỏ hàng {qty}</strong>
+                  {/* remove quantity on cart */}
+                  {/* <strong>Giỏ hàng {qty}</strong> */}
+                  <strong>Giỏ hàng</strong>
                 </Link>
                 <Link
                   className="button is-light"

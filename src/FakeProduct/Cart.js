@@ -37,13 +37,13 @@ export default function Cart({ items, onCheckout }) {
               <td>{item.title}</td>
               <td>{item.price} $</td>
               <td>{item.qty}</td>
-              <td>{item.qty * item.price} $</td>
+              <td>{(item.qty * item.price).toFixed(2)} $</td>
             </tr>
           ))}
           <tr>
             <td>Total</td>
             <td colSpan={4}></td>
-            <td>{total} $</td>
+            <td>{total.toFixed(2)} $</td>
           </tr>
         </tbody>
       </table>
